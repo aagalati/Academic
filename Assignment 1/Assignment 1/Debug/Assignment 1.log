@@ -3,4 +3,7 @@ c:\users\adam\documents\visual studio 2015\projects\assignment 1\assignment 1\as
   c:\users\adam\documents\visual studio 2015\projects\assignment 1\assignment 1\assignment 1.cpp(4): note: Add directive to 'stdafx.h' or rebuild precompiled header
 c:\users\adam\documents\visual studio 2015\projects\assignment 1\assignment 1\assignment 1.cpp(5): warning C4627: '#include <string>': skipped when looking for precompiled header use
   c:\users\adam\documents\visual studio 2015\projects\assignment 1\assignment 1\assignment 1.cpp(5): note: Add directive to 'stdafx.h' or rebuild precompiled header
-  Assignment 1.vcxproj -> c:\users\adam\documents\visual studio 2015\Projects\Assignment 1\Debug\Assignment 1.exe
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Map.cpp
+  Assignment 1.vcxproj -> C:\Users\Adam\Documents\Visual Studio 2015\Projects\Assignment 1\Debug\Assignment 1.exe

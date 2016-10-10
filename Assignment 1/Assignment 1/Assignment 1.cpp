@@ -14,8 +14,10 @@ int main()
 	Map mymap(5, 5, false);
 	mymap.printMap();
 
+
+
 	int quit; //to exit
-	cout << "Type 0 to quit";
+	cout << "Type 0 to quit ";
 	cin >> quit;
 
     return 0;
