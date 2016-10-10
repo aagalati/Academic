@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <iostream>
-class Map
+class Map //change map name to grid or something, plan on using maps so less confusion
 {
 public:
 	Map(int height, int width, bool blank);
