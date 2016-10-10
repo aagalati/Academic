@@ -1,2 +1,2 @@
-# Academic
-Comp 345
+# Project
+Comp 345 Advanced C++
