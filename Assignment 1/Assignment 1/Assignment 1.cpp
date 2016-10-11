@@ -11,23 +11,14 @@ using namespace std;
 int main()
 {
 
-	Grid mygrid(5, 5, false);
-	mygrid.printMap();
+	Grid mygrid(10, 10, false);
+	mygrid.printMapValues();
 	
 	cout << endl;
 	
-	mygrid.setCell(2, 3, 7);
-	mygrid.printMap();
-	
-	cout << endl;
-	
-	mygrid.resizeMap(4, 4);
-	mygrid.printMap();
-	
-	cout << endl;
-	
-	mygrid.setCell(5, 6, 3);
+	mygrid.printMapImage();
 
+	cout << mygrid.checkValid() << endl;
 
 	int quit; //to exit
 	cout << "Type 0 to quit ";
