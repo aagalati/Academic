@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
 
-	Grid mygrid(10, 10, false);
+	Grid mygrid(6, 6, false);
 	mygrid.printMapValues();
 	
 	cout << endl;

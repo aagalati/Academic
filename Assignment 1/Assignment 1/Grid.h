@@ -11,6 +11,7 @@ public:
 	bool checkValid(int row, int col, int dir); //best to use recursion i think
 	void printMapValues();
 	void printMapImage();
+	void printMapImage(int row, int col);
 	void sizeMap();
 	void resizeMap(int width, int height);
 	void setCell(int row, int col, int set);

@@ -47,9 +47,9 @@ bool Grid::checkValid() {
 
 bool Grid::checkValid(int row, int col, int dir) {
 
-	cout << "Checking at (" << row << "," << col << ") = " << _gridData[row][col] << endl;
-	//int t;
-	//cin >> t;
+	//cout << "Checking at (" << row << "," << col << ") = " << _gridData[row][col] << endl;
+	int t;
+	cin >> t;
 
 	if (_gridData[row][col] == -2) {
 		cout << "Found the exit, returning true" << endl;
@@ -61,6 +61,7 @@ bool Grid::checkValid(int row, int col, int dir) {
 	}
 	else {
 		cout << "Checking empty space at (" << row << "," << col << ")" << endl;
+		printMapImage(row, col);
 
 		if (col != 0 && dir != 2) {
 			cout << "Going left" << endl;
@@ -159,6 +160,48 @@ void Grid::printMapImage() {
 
 }
 
+void Grid::printMapImage(int row, int col) {
+
+	for (int i = 0; i < _height + 2; i++) { //loop to create a header for the grid
+		cout << "#";
+	}
+
+	cout << endl;
+
+	for (int i = 0; i < _width; i++) { //iterating through the whole 2d matrix and inserting random numbers
+
+		cout << "#";
+
+		for (int j = 0; j < _height; j++) {
+			if (i == row && j == col)
+				cout << "$";
+			else {
+				switch (_gridData[i][j]) {
+
+				case 0: cout << " ";
+					break;
+				case 1: cout << "#";
+					break;
+				case 2: cout << "O";
+					break;
+				default: cout << "D";
+					break;
+				}
+			}
+
+		}
+
+		cout << "#" << endl;
+
+	}
+
+	for (int i = 0; i < _height + 2; i++) { //loop to create a header for the grid
+		cout << "#";
+	}
+
+	cout << endl;
+
+}
 
 void Grid::setCell(int row, int col, int set) {
 
