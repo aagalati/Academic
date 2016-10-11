@@ -4,16 +4,29 @@
 #include <iostream>
 #include <string>
 #include "stdafx.h"
-#include "Map.h"
+#include "Grid.h"
 
 using namespace std;
 
 int main()
 {
 
-	Map mymap(5, 5, false);
-	mymap.printMap();
-
+	Grid mygrid(5, 5, false);
+	mygrid.printMap();
+	
+	cout << endl;
+	
+	mygrid.setCell(2, 3, 7);
+	mygrid.printMap();
+	
+	cout << endl;
+	
+	mygrid.resizeMap(4, 4);
+	mygrid.printMap();
+	
+	cout << endl;
+	
+	mygrid.setCell(5, 6, 3);
 
 
 	int quit; //to exit
