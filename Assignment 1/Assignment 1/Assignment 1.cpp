@@ -23,7 +23,7 @@ int main()
 	cout << mygrid.checkValid() << endl;
 
 	//mygrid.resizeMap(4, 4);
-	//mygrid.setCell(1, 1, 7);
+	//mygrid.setCell(1, 2, 7);
 
 	//cout << endl;
 

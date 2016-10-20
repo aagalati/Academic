@@ -1,26 +1,28 @@
 #pragma once
 #include <vector>
 #include <iostream>
-class Grid //change map name to grid or something, plan on using maps so less confusion
+using namespace std;
+
+class Grid
 {
 public:
 
 	Grid(int width, int height, bool blank);
 	void fillMapRandom();
 	bool checkValid();
-	bool checkValid(int row, int col, int dir); //best to use recursion i think
+	bool checkValid(int row, int col, int dir);
 	void printMapValues();
 	void printMapImage();
 	void printMapImage(int row, int col);
 	void sizeMap();
 	void resizeMap(int width, int height);
 	void setCell(int row, int col, int set);
-	void setRow(int row, int set);
-	void setCol(int col, int set);
-	void addExtraRow(int set);
-	void addExtraCol(int set);
-	void getWidth();
-	void getHeight();
+	//void setRow(int row, int set);
+	//void setCol(int col, int set);
+	//void addExtraRow(int set);  //commmented code is code to be implemented later on
+	//void addExtraCol(int set);
+	//void getWidth();
+	//void getHeight();
 	//~Grid();
 	//generate stack for the shortest distance
 	//use objects/cell class for cells
@@ -35,6 +37,6 @@ private:
 	int _exit_col;
 	bool isValid;
 
-	std::vector< std::vector<int> > _gridData;
+	vector< vector<int> > _gridData;
 };
 
