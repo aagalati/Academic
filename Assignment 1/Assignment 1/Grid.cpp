@@ -25,8 +25,16 @@ void Grid::fillMapRandom()
 		}
 	}
 	
-	_gridData[rand() % _width][rand() % _height] = -1;
-	_gridData[rand() % _width][rand() % _height] = -2;
+	_entrance_col = rand() % _width;
+	_exit_col = rand() % _width;
+
+	_entrance_row = rand() % _height;
+	_exit_row = rand() % _height;
+
+
+
+	_gridData[_entrance_col][_entrance_row] = -1;
+	_gridData[_exit_col][_exit_row] = -2;
 
 }
 
@@ -34,11 +42,13 @@ bool Grid::checkValid() {
 
 	cout << "Finding entrance..." << endl;
 
+	bool found = false;
+
 	for (int i = 0; i < _width; i++) { //iterating through the whole 2d matrix and inserting random numbers
 		for (int j = 0; j < _height; j++) {
 			if (_gridData[i][j] == -1) {
 				cout << "Start checking if map is valid..." << endl;
-				return checkValid(i, j, 0);
+				return checkValid(i, j, 0, true);
 			}
 		}
 	}
@@ -60,36 +70,49 @@ bool Grid::checkValid(int row, int col, int dir) {
 		return false;
 	}
 	else {
-		cout << "Checking empty space at (" << row << "," << col << ")" << endl;
-		printMapImage(row, col);
+			
+		if (!rev) {
 
-		if (col != 0 && dir != 2) {
-			cout << "Going left" << endl;
-			if (checkValid(row, col - 1, 1))
-				return true;
+			cout << "Checking empty space at (" << row << "," << col << ")" << endl;
+			printMapImage(row, col);
+
+			if (col != 0 && dir != 2) {
+				cout << "Going left" << endl;
+				if (checkValid(row, col - 1, 1))
+					return true;
+			}
+
+			if (col != _width - 1 && dir != 1) {
+				cout << "Going right" << endl;
+				if (checkValid(row, col + 1, 2))
+					return true;
+			}
+
+			if (row != 0 && dir != 4) {
+				cout << "Going up" << endl;
+				if (checkValid(row - 1, col, 3))
+					return true;
+			}
+
+			if (row != _height - 1 && dir != 3) {
+				cout << "Going down" << endl;
+				if (checkValid(row + 1, col, 4))
+					return true;
+			}
+
 		}
 
-		if (col != _width - 1 && dir != 1) {
-			cout << "Going right" << endl;
-			if (checkValid(row, col + 1, 2))
-				return true;
-		}
-
-		if (row != 0 && dir != 4) {
-			cout << "Going up" << endl;
-			if (checkValid(row - 1, col, 3))
-				return true;
-		}
-
-		if (row != _height - 1 && dir != 3) {
-			cout << "Going down" << endl;
-			if (checkValid(row + 1, col, 4))
-				return true;
-		}
 	}
 
 	return false;
 }
+
+// checkValid(int row, int col) {
+
+
+	
+
+//}
 
 void Grid::printMapValues() {
 

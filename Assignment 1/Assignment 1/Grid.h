@@ -22,6 +22,8 @@ public:
 	void getWidth();
 	void getHeight();
 	//~Grid();
+	//generate stack for the shortest distance
+	//use objects/cell class for cells
 
 private:
 
@@ -31,6 +33,7 @@ private:
 	int _entrance_col;
 	int _exit_row;
 	int _exit_col;
+	bool isValid;
 
 	std::vector< std::vector<int> > _gridData;
 };
